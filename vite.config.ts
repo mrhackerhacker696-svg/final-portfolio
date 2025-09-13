@@ -1,3 +1,4 @@
+
 import { defineConfig, Plugin } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
@@ -8,7 +9,10 @@ export default defineConfig(({ mode }) => ({
   server: {
     host: "::",
     port: 8080,
-    allowedHosts: "final-portfolio-0zy2.onrender.com", // ✅ Allow all hosts
+    allowedHosts: [
+      "final-portfolio-0zy2.onrender.com", // ✅ Allow your Render domain
+      "localhost",                     // ✅ Allow local development
+    ],
     fs: {
       allow: ["./client", "./shared"],
       deny: [".env", ".env.*", "*.{crt,pem}", "**/.git/**", "server/**"],
@@ -32,6 +36,8 @@ function expressPlugin(): Plugin {
     apply: "serve", // Only apply during development (serve mode)
     configureServer(server) {
       const app = createServer();
+
+      // Add Express app as middleware to Vite dev server
       server.middlewares.use(app);
     },
   };
