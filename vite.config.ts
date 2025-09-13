@@ -53,7 +53,7 @@ export default defineConfig(({ mode }) => ({
     host: "::",
     port: 8080,
     allowedHosts: [
-      "kanu-portfoliyo.onrender.com", // ✅ Allow your Render domain
+      "final-portfolio-0zy2.onrender.com", // ✅ Allow your Render domain
       "localhost",                     // ✅ Allow local development
     ],
     fs: {
