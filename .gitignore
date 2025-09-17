@@ -1,0 +1,27 @@
+# Dependencies
+node_modules/
+
+# Package manager logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Build outputs
+dist/
+
+# Env files (keep secrets out of git)
+.env
+.env.*
+.env.local
+.env.*.local
+
+# OS/editor files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Misc caches
+.vite/
+client/.vite/
